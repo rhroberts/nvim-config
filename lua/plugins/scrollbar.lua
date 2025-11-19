@@ -19,6 +19,7 @@ return {
   },
   {
     'kevinhwang91/nvim-hlslens',
+    event = 'BufReadPost',
     config = function()
       require('scrollbar.handlers.search').setup()
       require('scrollbar.handlers.gitsigns').setup()

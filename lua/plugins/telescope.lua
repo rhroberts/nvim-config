@@ -1,7 +1,7 @@
 return {
   { -- Fuzzy Finder (files, lsp, etc)
     'nvim-telescope/telescope.nvim',
-    cmd = 'Telescope',
+    lazy = false,
     --branch = '0.1.x',
     branch = 'master',
     keys = {

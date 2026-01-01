@@ -1,11 +1,11 @@
 return {
   {
     'nvim-treesitter/nvim-treesitter',
-    event = { 'BufReadPre', 'BufNewFile' },
+    lazy = false,
     build = ':TSUpdate',
-    main = 'nvim-treesitter.configs',
-    opts = {
-      ensure_installed = {
+    config = function()
+      -- Install parsers
+      local parsers = {
         'bash',
         'c',
         'diff',
@@ -17,13 +17,11 @@ return {
         'query',
         'vim',
         'vimdoc',
-      },
-      auto_install = true,
-      highlight = {
-        enable = true,
-        additional_vim_regex_highlighting = { 'ruby' },
-      },
-      indent = { enable = true, disable = { 'ruby' } },
-    },
+      }
+      require('nvim-treesitter').install(parsers)
+
+      -- Enable treesitter highlighting and indentation (built into Neovim)
+      vim.treesitter.language.register('bash', 'sh')
+    end,
   },
 }

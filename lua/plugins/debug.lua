@@ -24,30 +24,106 @@ return {
     -- Add your own debuggers here
     -- 'leoluz/nvim-dap-go',
   },
-  keys = function(_, keys)
-    local dap = require('dap')
-    local dapui = require('dapui')
-    return {
-      -- Basic debugging keymaps, feel free to change to your liking!
-      { '<leader>db', dap.toggle_breakpoint, desc = 'Debug: Toggle Breakpoint' },
-      { '<leader>da', dap.clear_breakpoints, desc = 'Debug: Clear All Breakpoints' },
-      { '<leader>dc', dap.continue, desc = 'Debug: Start/Continue' },
-      { '<leader>dr', dap.repl.toggle, desc = 'Debug: Toggle REPL' },
-      { '<leader>di', dap.step_into, desc = 'Debug: Step Into' },
-      { '<leader>do', dap.step_over, desc = 'Debug: Step Over' },
-      { '<leader>dp', dap.step_out, desc = 'Debug: Step Out' },
-      { '<leader>dl', dap.run_last, desc = 'Debug: Run Last' },
-      { '<leader>dt', dap.terminate, desc = 'Debug: Terminate' },
-      { '<leader>de', dap.eval, desc = 'Debug: Evaluate' },
-      { '<leader>dv', dap.run_to_cursor, desc = 'Debug: Run to Cursor' },
-      -- dapui
-      -- Toggle to see last session result. Without this, you can't see session output in case of unhandled exception.
-      { '<leader>dut', dapui.toggle, desc = 'Debug: Toggle DAP UI' },
-      { '<leader>duo', dapui.open, desc = 'Debug: Open DAP UI' },
-      { '<leader>duc', dapui.close, desc = 'Debug: Close DAP UI' },
-      unpack(keys),
-    }
-  end,
+  keys = {
+    {
+      '<leader>db',
+      function()
+        require('dap').toggle_breakpoint()
+      end,
+      desc = 'Debug: Toggle Breakpoint',
+    },
+    {
+      '<leader>da',
+      function()
+        require('dap').clear_breakpoints()
+      end,
+      desc = 'Debug: Clear All Breakpoints',
+    },
+    {
+      '<leader>dc',
+      function()
+        require('dap').continue()
+      end,
+      desc = 'Debug: Start/Continue',
+    },
+    {
+      '<leader>dr',
+      function()
+        require('dap').repl.toggle()
+      end,
+      desc = 'Debug: Toggle REPL',
+    },
+    {
+      '<leader>di',
+      function()
+        require('dap').step_into()
+      end,
+      desc = 'Debug: Step Into',
+    },
+    {
+      '<leader>do',
+      function()
+        require('dap').step_over()
+      end,
+      desc = 'Debug: Step Over',
+    },
+    {
+      '<leader>dp',
+      function()
+        require('dap').step_out()
+      end,
+      desc = 'Debug: Step Out',
+    },
+    {
+      '<leader>dl',
+      function()
+        require('dap').run_last()
+      end,
+      desc = 'Debug: Run Last',
+    },
+    {
+      '<leader>dt',
+      function()
+        require('dap').terminate()
+      end,
+      desc = 'Debug: Terminate',
+    },
+    {
+      '<leader>de',
+      function()
+        require('dap').eval()
+      end,
+      desc = 'Debug: Evaluate',
+    },
+    {
+      '<leader>dv',
+      function()
+        require('dap').run_to_cursor()
+      end,
+      desc = 'Debug: Run to Cursor',
+    },
+    {
+      '<leader>dut',
+      function()
+        require('dapui').toggle()
+      end,
+      desc = 'Debug: Toggle DAP UI',
+    },
+    {
+      '<leader>duo',
+      function()
+        require('dapui').open()
+      end,
+      desc = 'Debug: Open DAP UI',
+    },
+    {
+      '<leader>duc',
+      function()
+        require('dapui').close()
+      end,
+      desc = 'Debug: Close DAP UI',
+    },
+  },
   config = function()
     local dap = require('dap')
     local dapui = require('dapui')

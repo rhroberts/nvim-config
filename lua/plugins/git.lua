@@ -91,7 +91,7 @@ return {
           map('n', '<leader>ghq', gitsigns.setqflist, { desc = '[g]it [h]unk [q]uickfix list' })
 
           -- Toggles
-          map('n', '<leader>tb', gitsigns.toggle_current_line_blame, { desc = '[T]oggle git [b]lame line' })
+          map('n', '<leader>gb', gitsigns.toggle_current_line_blame, { desc = '[g]it [b]lame toggle' })
           map('n', '<leader>tw', gitsigns.toggle_word_diff, { desc = '[T]oggle [w]ord diff' })
 
           -- Text object

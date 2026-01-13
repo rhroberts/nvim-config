@@ -167,7 +167,7 @@ return {
       --  - settings (table): Override the default settings passed when initializing the server.
       --        For example, to see the options for `lua_ls`, you could go to: https://luals.github.io/wiki/settings/
       local servers = {
-        -- clangd = {},
+        clangd = {},
         -- gopls = {},
         pyright = {},
         -- rust_analyzer = {},
@@ -180,6 +180,18 @@ return {
         ts_ls = {},
         html = {},
         sqlls = {},
+        arduino_language_server = {
+          cmd = {
+            '/Users/rusty/go/bin/arduino-language-server',
+            '-cli-config',
+            '/Users/rusty/Library/Arduino15/arduino-cli.yaml',
+            '-clangd',
+            '/usr/bin/clangd',
+            '-fqbn',
+            'arduino:avr:uno', -- Default board, will be overridden by .arduino_config.lua
+          },
+          filetypes = { 'arduino' },
+        },
         --
 
         lua_ls = {

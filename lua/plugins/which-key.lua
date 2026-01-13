@@ -151,6 +151,11 @@ return {
           group = '[v]irtual environment',
           icon = { icon = '󰌠', color = 'yellow' },
         },
+        {
+          '<leader>a',
+          group = '[a]rduino',
+          icon = { icon = '󱙤', color = 'cyan' },
+        },
       },
     },
   },

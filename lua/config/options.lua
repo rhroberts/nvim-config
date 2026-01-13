@@ -66,3 +66,6 @@ opt.scrolloff = 10
 
 -- Set fish as the default shell for terminal
 opt.shell = '/opt/homebrew/bin/fish'
+
+-- Prompt before quitting with unsaved changes
+opt.confirm = true

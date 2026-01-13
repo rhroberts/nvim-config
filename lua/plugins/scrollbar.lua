@@ -4,8 +4,8 @@ return {
     event = 'BufReadPost',
     opts = {
       excluded_filetypes = {
-        'cmp_docs',
-        'cmp_menu',
+        'blink-cmp-menu',
+        'blink-cmp-documentation',
         'noice',
         'prompt',
         'TelescopePrompt',

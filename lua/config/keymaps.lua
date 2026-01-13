@@ -39,3 +39,6 @@ vim.keymap.set('n', '<C-k>', '<C-w><C-k>', { desc = 'Move focus to the upper win
 -- Buffer navigation
 vim.keymap.set('n', '<Tab>', '<cmd>bnext<CR>', { desc = 'Go to the next buffer' })
 vim.keymap.set('n', '<S-Tab>', '<cmd>bprevious<CR>', { desc = 'Go to the previous buffer' })
+
+-- LSP
+vim.keymap.set('n', '<leader>cr', '<cmd>LspRestart<CR>', { desc = '[c]ode [r]estart LSP' })

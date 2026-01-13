@@ -16,8 +16,9 @@ return {
       end,
     })
   end,
-  keys = { -- Example mapping to toggle outline
-    { '<leader>l', '<cmd>Neotree toggle<CR>', desc = 'Toggle neo-tree' },
+  keys = {
+    { '<leader>l', '<cmd>Neotree focus<CR>', desc = 'Focus neo-tree' },
+    { '<leader>L', '<cmd>Neotree toggle<CR>', desc = 'Toggle neo-tree' },
   },
   opts = {
     log_level = 'info',

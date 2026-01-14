@@ -156,6 +156,11 @@ return {
           group = '[a]rduino',
           icon = { icon = '󱙤', color = 'cyan' },
         },
+        {
+          '<leader>n',
+          group = '[n]otifications',
+          icon = { icon = '󰂚', color = 'yellow' },
+        },
       },
     },
   },

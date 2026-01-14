@@ -174,18 +174,8 @@ return {
         html = {},
         sqlls = {},
         terraformls = {},
-        arduino_language_server = {
-          cmd = {
-            '/Users/rusty/go/bin/arduino-language-server',
-            '-cli-config',
-            '/Users/rusty/Library/Arduino15/arduino-cli.yaml',
-            '-clangd',
-            '/usr/bin/clangd',
-            '-fqbn',
-            'arduino:avr:uno', -- Default board, will be overridden by .arduino_config.lua
-          },
-          filetypes = { 'arduino' },
-        },
+        -- arduino configured manually below (needs custom cmd)
+        -- arduino_language_server = {}
         lua_ls = {
           -- cmd = {...},
           -- filetypes = { ...},
@@ -230,7 +220,22 @@ return {
             server.capabilities = vim.tbl_deep_extend('force', {}, capabilities, server.capabilities or {})
             require('lspconfig')[server_name].setup(server)
           end,
+          -- Skip auto-config for arduino_language_server (needs custom cmd)
+          ['arduino_language_server'] = function() end,
         },
+      })
+
+      -- Arduino LSP with custom command args
+      vim.lsp.config('arduino_language_server', {
+        cmd = {
+          'arduino-language-server',
+          '-cli-config',
+          '/Users/rusty/Library/Arduino15/arduino-cli.yaml',
+          '-fqbn',
+          'arduino:avr:uno',
+        },
+        filetypes = { 'arduino' },
+        capabilities = capabilities,
       })
     end,
   },

@@ -142,6 +142,7 @@ return {
           function()
             vim.cmd('Neotree toggle')
             vim.cmd('Outline')
+            vim.cmd('wincmd =') -- Equalize splits
             vim.cmd('wincmd h') -- Go left from outline (to editor window)
           end,
           desc = 'Toggle [E]xplorer and Outline',

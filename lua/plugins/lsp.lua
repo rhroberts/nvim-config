@@ -168,6 +168,7 @@ return {
         -- gopls = {},
         pyright = {},
         rust_analyzer = {},
+        yamlls = {},
         -- ... etc. See `:help lspconfig-all` for a list of all the pre-configured LSPs
         --
         -- TypeScript is handled by typescript-tools.nvim (see lua/plugins/typescript-tools.lua)
@@ -206,6 +207,7 @@ return {
       vim.list_extend(ensure_installed, {
         'stylua', -- Used to format Lua code
         'prettier', -- Used to format HTML, CSS, JS, TS, TSX, JSON
+        'yaml-language-server', -- Used for YAML LSP support
         --'ruff', -- Used to format and lint Python code (this installs as LSP, which may not be desireable as it is verbose and overlaps with pyright; need global install for fomatting if we don't install here)
       })
       require('mason-tool-installer').setup({ ensure_installed = ensure_installed })

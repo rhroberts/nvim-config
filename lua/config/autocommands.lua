@@ -12,6 +12,15 @@ vim.api.nvim_create_autocmd('TextYankPost', {
   end,
 })
 
+-- Equalize splits when terminal window is resized
+vim.api.nvim_create_autocmd('VimResized', {
+  desc = 'Equalize splits when window is resized',
+  group = vim.api.nvim_create_augroup('equalize-splits', { clear = true }),
+  callback = function()
+    vim.cmd('wincmd =')
+  end,
+})
+
 -- User commands for format control
 vim.api.nvim_create_user_command('FormatDisable', function(args)
   if args.bang then

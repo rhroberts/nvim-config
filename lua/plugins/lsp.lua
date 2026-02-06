@@ -168,7 +168,16 @@ return {
         -- gopls = {},
         pyright = {},
         rust_analyzer = {},
-        yamlls = {},
+        yamlls = {
+          settings = {
+            yaml = {
+              schemaStore = {
+                enable = true,
+                url = 'https://www.schemastore.org/api/json/catalog.json',
+              },
+            },
+          },
+        },
         -- ... etc. See `:help lspconfig-all` for a list of all the pre-configured LSPs
         --
         -- TypeScript is handled by typescript-tools.nvim (see lua/plugins/typescript-tools.lua)

@@ -22,6 +22,7 @@ return {
       return { timeout_ms = 500, lsp_format = 'fallback' }
     end,
     formatters_by_ft = {
+      markdown = { 'prettier' },
       lua = { 'stylua' },
       javascript = { 'prettier' },
       typescript = { 'prettier' },

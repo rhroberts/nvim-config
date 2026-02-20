@@ -148,6 +148,11 @@ return {
           desc = 'Toggle [E]xplorer and Outline',
         },
         {
+          '<leader>i',
+          '<cmd>IDE<CR>',
+          desc = '[I]DE layout',
+        },
+        {
           '<leader>v',
           group = '[v]irtual environment',
           icon = { icon = '󰌠', color = 'yellow' },

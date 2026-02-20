@@ -85,12 +85,18 @@ end, {
   desc = 'Re-enable autoformat-on-save',
 })
 
-vim.api.nvim_create_user_command('IDE', function()
+vim.api.nvim_create_user_command('IDE', function(args)
   vim.cmd('Neotree show')
   vim.cmd('OutlineOpen')
   vim.cmd('wincmd h') -- Move from outline to editor
-  vim.cmd('vsplit')
+  if not args.bang then
+    vim.cmd('vsplit')
+  end
   equalize_splits()
 end, {
-  desc = 'Open IDE layout: Neo-tree + Outline + vertical split',
+  desc = 'Open IDE layout: Neo-tree + Outline (+ vertical split)',
+  bang = true,
 })
+
+vim.keymap.set('n', '<leader>i', '<cmd>IDE<CR>', { desc = '[i]DE layout with split' })
+vim.keymap.set('n', '<leader>I', '<cmd>IDE!<CR>', { desc = '[I]DE layout without split' })

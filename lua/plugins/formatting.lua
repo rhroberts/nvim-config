@@ -32,6 +32,9 @@ return {
       html = { 'prettier' },
       json = { 'prettier' },
       python = { 'ruff_format', 'ruff_organize_imports' },
+      cpp = { 'clang_format' },
+      c = { 'clang_format' },
+      arduino = { 'clang_format' },
     },
   },
 }

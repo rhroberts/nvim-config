@@ -31,6 +31,7 @@ return {
         'ruby',
         'rust',
         'scss',
+        'svelte',
         'sql',
         'toml',
         'tsx',
@@ -45,6 +46,14 @@ return {
     config = function(_, opts)
       require('nvim-treesitter').setup(opts)
       vim.treesitter.language.register('bash', 'sh')
+
+      -- Enable treesitter highlighting for any filetype that has a parser,
+      -- covering languages not handled by Neovim's built-in ftplugins.
+      vim.api.nvim_create_autocmd('FileType', {
+        callback = function()
+          pcall(vim.treesitter.start)
+        end,
+      })
     end,
   },
 }

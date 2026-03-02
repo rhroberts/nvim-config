@@ -29,6 +29,7 @@ return {
       javascriptreact = { 'prettier' },
       typescriptreact = { 'prettier' },
       css = { 'prettier' },
+      svelte = { 'prettier' },
       html = { 'prettier' },
       json = { 'prettier' },
       python = { 'ruff_format', 'ruff_organize_imports' },
